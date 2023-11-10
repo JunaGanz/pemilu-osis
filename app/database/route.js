@@ -42,5 +42,7 @@ export async function POST(req) {
         body: JSON.stringify(db),
     })
     
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
     return Response.json({ status: true, message: "passed" })
 }
