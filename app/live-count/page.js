@@ -1,12 +1,9 @@
 "use client"
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import dataStatic from '@/public/src/dataStatic.js'
 import Header from '@/app/komponen/header.js'
 import Footer from '@/app/komponen/footer.js'
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from 'react-responsive-carousel'
 
 let loadedCallback = null
 let loaded = false
@@ -71,25 +68,10 @@ export default function Home({ searchParams }) {
             </div>
             <div className="flex flex-wrap gap-5 pt-40">
                 {Object.keys(dataStatic.smpCalon).map((noUrut) => {
-                    let { ketua, wakil, visi, misi, image } = dataStatic.smpCalon[noUrut]
+                    let { ketua, wakil, visi, misi } = dataStatic.smpCalon[noUrut]
                     return (
-                        <div key={noUrut} className="max-w-[313px] mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+                        <div key={noUrut} className="w-[313px] mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
                             <div className="md:flex">
-                                <div className="md:shrink-0">
-                                    <Carousel
-                                        autoPlay={true}
-                                        infiniteLoop={true}
-                                        showThumbs={false}
-                                        showStatus={false}
-                                        showArrows={false}
-                                        showIndicators={false}
-                                    >
-                                        {image.map((url, i) => {
-                                            let titleImg = `${ketua} & ${wakil} Image ${i+1}`
-                                            return (<Image className="h-100 w-full object-cover md:h-full md:w-50 bg-indigo-600" src={url} alt={titleImg} placeholder="blur" />)
-                                        })}
-                                    </Carousel>
-                                </div>
                                 <div className="p-8">
                                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{noUrut}</div>
                                     <div className="block mt-1 text-lg leading-tight font-medium text-black"><span className="hover:underline">{ketua}</span> & <span className="hover:underline">{wakil}</span></div>
@@ -107,25 +89,10 @@ export default function Home({ searchParams }) {
             </div>
             <div className="flex flex-wrap gap-5 pt-8 border-t mt-8">
                 {Object.keys(dataStatic.smkCalon).map((noUrut) => {
-                    let { ketua, wakil, visi, misi, image } = dataStatic.smkCalon[noUrut]
+                    let { ketua, wakil, visi, misi } = dataStatic.smkCalon[noUrut]
                     return (
-                        <div key={noUrut} className="max-w-[313px] mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+                        <div key={noUrut} className="w-[313px] mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
                             <div className="md:flex">
-                                <div className="md:shrink-0">
-                                    <Carousel
-                                        autoPlay={true}
-                                        infiniteLoop={true}
-                                        showThumbs={false}
-                                        showStatus={false}
-                                        showArrows={false}
-                                        showIndicators={false}
-                                    >
-                                        {image.map((url, i) => {
-                                            let titleImg = `${ketua} & ${wakil} Image ${i+1}`
-                                            return (<Image className="h-100 w-full object-cover md:h-full md:w-50 bg-indigo-600" src={url} alt={titleImg} placeholder="blur" />)
-                                        })}
-                                    </Carousel>
-                                </div>
                                 <div className="p-8">
                                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{noUrut}</div>
                                     <div className="block mt-1 text-lg leading-tight font-medium text-black"><span className="hover:underline">{ketua}</span> & <span className="hover:underline">{wakil}</span></div>
