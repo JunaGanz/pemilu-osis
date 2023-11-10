@@ -27,7 +27,7 @@ export default function NotFound() {
             </div>
             <div className="pt-40">
                 <h1 className="text-center font-bold text-2xl">NAVIGASI HALAMAN</h1>
-                <p className="justify-center mx-6">Website ini diciptakan untuk menjembatani siswa/siswi SMP-SMK AL-KAUTSAR dalam memilih OSIS SMP-SMK AL-KAUTSAR. Silahkan klik salah satu tautan dibawah untuk melihat apa saja yang ada di website.</p>
+                <p className="justify-center mx-6">Website ini diciptakan untuk menjembatani siswa/siswi SMP-SMK AL-KAUTSAR dalam pemilihan OSIS SMP-SMK AL-KAUTSAR. Silahkan klik salah satu tautan dibawah untuk melihat apa saja yang ada di website.</p>
                 <div className="max-w-[313px] mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
                     <div className="p-8">
                         {navLinks.map(({ name, url }) => {
